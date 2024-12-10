@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserMapper">
+    <select id="getUserById" parameterClass="int" resultClass="com.example.model.User">
+        SELECT * FROM users WHERE id = #id#
+    </select>
+
+    <insert id="insertUser" parameterClass="com.example.model.User">
+        INSERT INTO users (id, name, email) VALUES (#id#, #name#, #email#)
+    </insert>
+</sqlMap>
